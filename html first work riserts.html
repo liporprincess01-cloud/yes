@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CardlinkEd</title>
+  <meta name="description" content="CardlinkEd Offline Dashboard" />
+
+  <!-- 🎀 Google Font for Cute & Fun Headline -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      font-family: system-ui, Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    body {
+      margin: 0;
+      background-color: #FFD6E0; /* pastel pink */
+      color: #333;
+    }
+
+    header,
+    footer {
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.75);
+      border-radius: 12px;
+      margin: 0.5rem;
+    }
+
+    main {
+      padding: 1rem;
+      max-width: 900px;
+      margin: 1rem auto;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+    }
+
+    h1 {
+      margin: 0;
+      color: #c94f7c;
+      font-family: 'Fredoka One', cursive; /* Cute font */
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+
+    .folder {
+      padding: 1rem;
+      margin: 1rem 0;
+      background: #fff;
+      border: 2px solid #c94f7c;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .folder:hover {
+      background: #ffe6ee;
+    }
+
+    .file-list {
+      display: none;
+      margin-top: 1rem;
+      padding-left: 1rem;
+    }
+
+    .file-list a {
+      display: block;
+      margin: 0.3rem 0;
+      text-decoration: none;
+      color: #333;
+      padding: 0.5rem;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+
+    .file-list a:hover {
+      background: #f1c4d4;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>CardlinkEd</h1>
+  </header>
+
+  <main>
+    <!-- Business Mathematics (parent folder) -->
+    <div class="folder" onclick="toggleFolder('fabm')">
+      📂 Business Mathematics
+    </div>
+    <div id="fabm" class="file-list">
+
+      <!-- Salaries and Wages (sub-folder only) -->
+      <div class="folder" onclick="toggleFolder('salaries')">
+        📂 Salaries and Wages
+      </div>
+      <div id="salaries" class="file-list">
+
+        <!-- Video Lectures Sub-Folder -->
+        <div class="folder" onclick="toggleFolder('videos')">
+          📂🎥 Video Lectures
+        </div>
+        <div id="videos" class="file-list">
+          <a href="videos/vid1.mp4" target="_blank">🎥 Video 1</a>
+          <a href="videos/vid2.mov" target="_blank">🎥 Video 2</a>
+        </div>
+
+        <!-- Photos Sub-Folder -->
+        <div class="folder" onclick="toggleFolder('photos')">
+          📂🖼️ Photos
+        </div>
+        <div id="photos" class="file-list">
+          <a href="photos/SW1.pdf" target="_blank">📄 SW1 (PDF)</a>
+          <a href="photos/SW2.jpg" target="_blank">🖼️ SW2 (JPG)</a>
+          <a href="photos/SW3.jpg" target="_blank">🖼️ SW3 (JPG)</a>
+          <a href="photos/SW4.pdf" target="_blank">📄 SW4 (PDF)</a>
+          <a href="photos/SW5.jpg" target="_blank">🖼️ SW5 (JPG)</a>
+          <a href="photos/SW6.png" target="_blank">🖼️ SW6 (PNG)</a>
+        </div>
+
+        <!-- Learning Exercises Sub-Folder -->
+        <div class="folder" onclick="toggleFolder('exercises')">
+          📂📑 Learning Exercises
+        </div>
+        <div id="exercises" class="file-list">
+          <a href="exercises/exer1.pdf" target="_blank">📑 Exercise 1 (PDF)</a>
+          <a href="exercises/exer2.pdf" target="_blank">📑 Exercise 2 (PDF)</a>
+          <a href="exercises/exer3.pdf" target="_blank">📑 Exercise 3 (PDF)</a>
+        </div>
+
+        <!-- Reviewer Sub-Folder -->
+        <div class="folder" onclick="toggleFolder('reviewer')">
+          📂📘 Reviewer
+        </div>
+        <div id="reviewer" class="file-list">
+          <a href="SAWREVIEWER.pdf" target="_blank">📘 Salaries and Wages Reviewer</a>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <small>© 2025 CardlinkEd | Offline Learning Dashboard</small>
+  </footer>
+
+  <script>
+    function toggleFolder(id) {
+      const folder = document.getElementById(id);
+      if (folder.style.display === "block") {
+        folder.style.display = "none";
+      } else {
+        folder.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
+
+ 
+
